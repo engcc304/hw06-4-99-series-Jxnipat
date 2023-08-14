@@ -24,22 +24,20 @@ int main() {
     scanf("%d", &n);
 
     int series_sum = 0;
-    int term = 9;
-    int multiplier = 10;
+    int term = 0;
 
     printf("Series = ");
     for (int i = 1; i <= n; i++) {
+        term = term * 10 + 9;
         if (i > 1) {
             printf(" + ");
         }
         printf("%d", term);
         series_sum += term;
-
-        term += multiplier;
-        multiplier *= 10;
     }
 
     printf("\nSum = %d\n", series_sum);
 
     return 0;
 }
+
