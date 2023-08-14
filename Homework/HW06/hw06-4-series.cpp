@@ -16,3 +16,30 @@
         Series = 9 + 99 + 999 + 9999 + 99999 + 999999 + 9999999
         Sum = 11111103
 */
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter number:\n");
+    scanf("%d", &n);
+
+    int series_sum = 0;
+    int term = 9;
+    int multiplier = 10;
+
+    printf("Series = ");
+    for (int i = 1; i <= n; i++) {
+        if (i > 1) {
+            printf(" + ");
+        }
+        printf("%d", term);
+        series_sum += term;
+
+        term += multiplier;
+        multiplier *= 10;
+    }
+
+    printf("\nSum = %d\n", series_sum);
+
+    return 0;
+}
